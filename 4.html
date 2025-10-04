@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Pineapple Bill</title>
+</head>
+<body>
+  <h2>Pineapple Bill Generator 🍍</h2>
+
+  Quantity: 
+  <input type="number" id="qty" placeholder="Enter quantity"><br><br>
+
+  Home Delivery: 
+  <input type="radio" name="delivery" value="yes"> Yes
+  <input type="radio" name="delivery" value="no"> No
+  <br><br>
+
+  Address:
+  <select id="address">
+    <option value="dhaka">Dhaka</option>
+    <option value="chittagong">Chittagong</option>
+  </select>
+  <br><br>
+
+  Tip:
+  <input type="number" id="tip" placeholder="Enter tip amount"><br><br>
+
+  <button onclick="generateBill()">Generate Bill</button>
+
+  <h3>Your Bill is: <span id="bill">0</span> BDT</h3>
+
+  <script>
+    function generateBill() {
+      let qty = Number(document.getElementById("qty").value);
+      let tip = Number(document.getElementById("tip").value);
+      let address = document.getElementById("address").value;
+      let delivery = document.querySelector('input[name="delivery"]:checked');
+
+      let price = qty * 12.5; // প্রতি পাইনএপেল 12.5 টাকা
+
+      // 🟡 Discount (সরাসরি শতাংশে)
+      if (qty >= 1 && qty <= 9) {
+        price = price * 0.81; // 19% ছাড়
+      } else if (qty >= 10 && qty <= 19) {
+        price = price * 0.85; // 15% ছাড়
+      } else if (qty >= 20) {
+        price = price * 0.80; // 20% ছাড়
+      }
+
+      // 🟢 Home delivery (যদি Yes হয়)
+      if (delivery && delivery.value === "yes") {
+        price = price + 40;
+      }
+
+      // 🔵 Address অনুযায়ী ট্যাক্স
+      if (address === "dhaka") {
+        price = price * 1.20; // 20% tax
+      } else if (address === "chittagong") {
+        price = price * 1.15; // 15% tax
+      }
+
+      // 🔴 Tip যোগ হবে সরাসরি
+      price = price + tip;
+
+      // 🧮 Final Output
+      document.getElementById("bill").innerText = price.toFixed(2);
+    }
+  </script>
+</body>
+</html>
