@@ -1,165 +1,120 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
 
-    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-</head>
+  <body>
+    <button
+      id="btn1"
+      onclick="alert('Hello!'); nijerFunction();"
+      onmouseover="nijerFunction1();"
+      onmouseout="nijreFunction2();"
+    >
+      Click Me
+    </button>
 
-<body>
+    <br /><br /><br /><br /><br />
 
-    <button id="btn1" onclick="alert('Hello!'); nijerFunction();" onmouseover="nijerFunction1();" onmouseout="nijreFunction2();" >Click Me</button>
+    Num 1:
 
-    <br><br><br><br><br>
+    <input type="text" id="txt1" />
 
-    Num 1:  
-
-    <input type="text" id="txt1">
-
-    <br><br><br><br>
+    <br /><br /><br /><br />
 
     Num 2 :
 
-    <input type="text" id="txt2">
+    <input type="text" id="txt2" />
 
-     <br><br><br><br>
+    <br /><br /><br /><br />
 
-     <button onclick="summation();">+</button>
+    <button onclick="summation();">+</button>
 
-     <br><br><br><br>
+    <br /><br /><br /><br />
 
     Result :
 
-    <input type="text" id="result">
+    <input type="text" id="result" />
 
- 
+    <hr />
 
-    <hr>
+    <br /><br />
 
-  <br><br>
+    Num-1 : <input type="text" id="t1" />
 
-  Num-1 : <input type="text" id="t1">
+    <br /><br />
 
-  <br><br>
+    Num-2 : <input type="text" id="t2" />
 
-  Num-2 : <input type="text" id="t2">
+    <br /><br />
 
-  <br><br>
+    <button onclick="calculate('sum')" id="sum">+</button>
 
-  <button onclick="calculate('sum')" id="sum">+</button>
+    <button onclick="calculate('sub')" id="sub">-</button>
 
-  <button onclick="calculate('sub')" id="sub">-</button>
+    <button onclick="calculate('mul')" id="mul">*</button>
 
-  <button onclick="calculate('mul')" id="mul">*</button>
+    <button onclick="calculate('div')" id="div">/</button>
 
-  <button onclick="calculate('div')" id="div">/</button>
+    <br /><br />
 
-  <br><br>
+    Result : <input type="text" id="total" />
+  </body>
 
-  Result : <input type="text" id="total">
+  <script>
+    function calculate(op) {
+      let n1 = Number(document.getElementById("t1").value);
 
-    
-
- 
-
-</body>
-
-<script>
-
- function calculate(op) {
-
-      let n1 = Number(document.getElementById('t1').value);
-
-      let n2 = Number(document.getElementById('t2').value);
+      let n2 = Number(document.getElementById("t2").value);
 
       let total = 0;
 
- 
-
-      if (op == 'sum') {
-
+      if (op == "sum") {
         total = n1 + n2;
-
-      } else if (op == 'sub') {
-
+      } else if (op == "sub") {
         total = n1 - n2;
-
-      } else if (op == 'mul') {
-
+      } else if (op == "mul") {
         total = n1 * n2;
-
-      } else if (op == 'div') {
-
+      } else if (op == "div") {
         if (n2 !== 0) {
-
           total = n1 / n2;
-
         } else {
-
           alert("Cannot divide by zero!");
 
           return;
-
         }
-
       }
 
- 
-
-      document.getElementById('total').value = total;
-
+      document.getElementById("total").value = total;
     }
 
- 
-
- 
-
- 
-
-     function nijerFunction(){
-
-        document.getElementById('btn1').style.backgroundColor="yellow";
-
-    } 
-
-     function nijerFunction1(){
-
-        document.getElementById('btn1').style.backgroundColor="green";
-
+    function nijerFunction() {
+      document.getElementById("btn1").style.backgroundColor = "yellow";
     }
 
-     function nijerFunction2(){
-
-        document.getElementById('btn1').style.backgroundColor="red";
-
+    function nijerFunction1() {
+      document.getElementById("btn1").style.backgroundColor = "green";
     }
 
- 
-
-    function summation(){
-
-        let num1 = Number(document.getElementById('txt1').value);
-
-         let num2 = Number(document.getElementById('txt2').value);
-
-         let sum = num1 + num2;
-
-         document.getElementById('result').value = sum;
-
+    function nijerFunction2() {
+      document.getElementById("btn1").style.backgroundColor = "red";
     }
 
- 
+    function summation() {
+      let num1 = Number(document.getElementById("txt1").value);
 
- 
+      let num2 = Number(document.getElementById("txt2").value);
 
-</script>
+      let sum = num1 + num2;
 
+      document.getElementById("result").value = sum;
+    }
+  </script>
 </html>
