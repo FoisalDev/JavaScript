@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#btn1{
+    height: 30px;
+    width: 80px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+    background-color: lightslategray;
+    transition: background-color 0.4 ease;
+}
