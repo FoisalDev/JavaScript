@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Input 1 :
+    <input type="text" id="txt1" />
+    <br /><br />
+    Input 1 :
+    <input type="text" id="txt2" />
+    <br /><br />
+    <button id="add" onclick="calculation('add');">+</button>
+    <button id="sub" onclick="calculation('sub');">-</button>
+    <button id="sum" onclick="calculation('mul');">*</button>
+    <button id="div" onclick="calculation('div');">/</button>
+    <br /><br />
+    Result:
+    <input type="text" id="result" />
+  </body>
+  <script>
+    function calculation(op) {
+      let l1 = Number(document.getElementById("txt1").value);
+      let l2 = Number(document.getElementById("txt2").value);
+      let total = 0;
+
+      if (op == "add") {
+        total = l1 + l2;
+      } else if (op == "sub") {
+        total = l1 - l2;
+      } else if (op == "mul") {
+        total = l1 * l2;
+      } else if (op == "div") {
+        if (l2 !== 0) {
+          total = l1 / l2;
+        } else {
+          alert("can not devide by zero (0)");
+        }
+      }
+
+      document.getElementById("result").value = total;
+    }
+  </script>
+</html>
