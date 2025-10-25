@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>substrack</title>
+  </head>
+  <body>
+    Input 1 :
+    <input type="text" id="input1" />
+    <br /><br />
+
+    Input 2 :
+    <input type="text" id="input2" />
+    <br /><br />
+    <button id="sub" onclick="substract();">Substract</button>
+    <br /><br />
+
+    Result :
+    <input type="text" id="result" />
+  </body>
+
+  <script>
+    function substract() {
+      let l1 = Number(document.getElementById("input1").value);
+      let l2 = Number(document.getElementById("input2").value);
+      let result = l1 - l2;
+
+      document.getElementById("result").value = result;
+    }
+  </script>
+</html>
