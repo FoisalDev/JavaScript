@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+  </head>
+  <body>
+    Input 1 :
+    <input type="text" id="input1" />
+    <br /><br />
+
+    Input 2 :
+    <input type="text" id="input2" />
+    <br /><br />
+
+    <button id="sum" onclick="calculate('add');">+</button>
+    <button id="sub" onclick="calculate('sub');">-</button>
+    <button id="mul" onclick="calculate('mul');">*</button>
+    <button id="div" onclick="calculate('div');">/</button>
+
+    <br /><br />
+    Result
+    <input type="text" id="result" />
+    <br /><br />
+  </body>
+  <script>
+    function calculate(op) {
+      let l1 = Number(document.getElementById("input1").value);
+      let l2 = Number(document.getElementById("input2").value);
+      let result = 0;
+
+      if (op == "add") {
+        result = l1 + l2;
+      } else if (op == "sub") {
+        result = l1 - l2;
+      } else if (op == "mul") {
+        result = l1 * l2;
+      } else {
+        if (l2 != 0) {
+          result = l1 / l2;
+        } else {
+          alert("cannot divide by 0");
+        }
+      }
+
+      document.getElementById("result").value = result;
+    }
+  </script>
+</html>
