@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum</title>
+  </head>
+  <body>
+    Input1 :
+    <input type="text" id="text1" />
+    <br /><br /><br />
+    Input2 :
+    <input type="text" id="text2" />
+    <br /><br /><br /><br />
+    <button onclick="summation()">Sum</button>
+    <br /><br /><br />
+    Result :
+    <input type="text" id="text3" />
+  </body>
+
+  <script>
+    function summation() {
+      let value1 = Number(document.getElementById("text1").value);
+      let value2 = Number(document.getElementById("text2").value);
+      let sum_total = value1 + value2;
+      document.getElementById("text3").value = sum_total;
+    }
+  </script>
+</html>
